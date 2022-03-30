@@ -1,0 +1,126 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --text1: 1.5rem;
+  --text2: 1.2rem;
+  --head: calc(1rem + 5vw);
+  --bg-color: #ff9f43;
+}
+body {
+  font-family: Georgia, serif;
+}
+.juice-section {
+  min-height: 100vh;
+  background: url(https://www.wearegurgaon.com/wp-content/uploads/2018/08/best-juice-shops-in-gurgaon.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  z-index: 2;
+  animation: slide 1s ease-in-out;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 10vh;
+  padding: 0rem 1rem;
+  color: #ff9f43;
+  transform: translateY(-100%);
+  animation: movedown 500ms ease-in 1s forwards;
+}
+
+@keyframes movedown {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0%);
+  }
+}
+
+.navbar ul {
+  list-style: none;
+}
+
+.navbar ul li {
+  display: inline-block;
+  margin-left: 3rem;
+  font-size: var(--text1);
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: #ff9f43;
+  border: 2px solid transparent;
+}
+
+.navbar ul li a:hover {
+  border-bottom: 2px solid #ff9f43;
+}
+
+.juice-text {
+  color: white;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes slide {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+
+.juice-text::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: black;
+  z-index: -1;
+  top: 0;
+  opacity: 0.5;
+}
+
+.juice-text a {
+  color: black;
+  background: var(--bg-color);
+  font-weight: 900;
+  font-size: var(--text1);
+  padding: 0.8rem 1rem;
+  margin: 0.8rem auto;
+  display: block;
+  border-radius: 10px;
+  transition: opacity 250ms linear;
+}
+
+.juice-text a:hover {
+  opacity: 0.8;
+}
+
+.juice-text h2 {
+  color: white;
+  font-size: var(--head);
+}
+
+.juice-text p {
+  margin: 10px;
+  font-size: var(--text1);
+}
+
+.juice-text h4 {
+    font-weight: 300;
+    color: white;
+    position: absolute;
+    bottom: 0;
+}
